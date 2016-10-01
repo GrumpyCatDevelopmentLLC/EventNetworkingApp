@@ -1,5 +1,5 @@
 //
-//  User+CoreDataClass.swift
+//  Event+CoreDataClass.swift
 //  EventNetworkingApp
 //
 //  Created by Rodney Sampson on 9/29/16.
@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import CoreData
 
-
-public class User: NSManagedObject {
+public class Event { //: NSManagedObject
 
 }

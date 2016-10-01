@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataClass.swift
+//  EventCell.swift
 //  EventNetworkingApp
 //
 //  Created by Rodney Sampson on 9/29/16.
@@ -7,9 +7,3 @@
 //
 
 import Foundation
-import CoreData
-
-
-public class Event: NSManagedObject {
-
-}
