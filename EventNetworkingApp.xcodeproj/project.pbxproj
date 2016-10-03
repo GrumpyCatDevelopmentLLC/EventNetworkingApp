@@ -12,6 +12,7 @@
 		3312B6D41D9EF62D009D13ED /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D31D9EF62D009D13ED /* RegisterViewController.swift */; };
 		3312B6D61D9FDEEE009D13ED /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D51D9FDEED009D13ED /* EventCreatorViewController.swift */; };
 		3312B6D81DA002F2009D13ED /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D71DA002F2009D13ED /* EventTests.swift */; };
+		33188A761DA29392004D50EC /* AttendeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33188A751DA29392004D50EC /* AttendeeCell.swift */; };
 		33E9E3291DA1531800631CBE /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9E3281DA1531700631CBE /* EventInfoViewController.swift */; };
 		33EEFCE11D9D9BAD00462884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCE01D9D9BAD00462884 /* AppDelegate.swift */; };
 		33EEFCE31D9D9BAD00462884 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCE21D9D9BAD00462884 /* LoginViewController.swift */; };
@@ -55,6 +56,7 @@
 		3312B6D31D9EF62D009D13ED /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3312B6D51D9FDEED009D13ED /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
 		3312B6D71DA002F2009D13ED /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		33188A751DA29392004D50EC /* AttendeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendeeCell.swift; sourceTree = "<group>"; };
 		33E9E3281DA1531700631CBE /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		33EEFCDD1D9D9BAD00462884 /* EventNetworkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventNetworkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EEFCE01D9D9BAD00462884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				33EEFD1F1D9E8E6D00462884 /* CoreDataStack.swift */,
 				33EEFD211D9E967C00462884 /* EventNetworkingAPI.swift */,
 				3312B6D11D9EF089009D13ED /* user.plist */,
+				33188A751DA29392004D50EC /* AttendeeCell.swift */,
 			);
 			path = EventNetworkingApp;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				33EEFD1C1D9DD53B00462884 /* EventCell.swift in Sources */,
 				33EEFD1A1D9DBEE800462884 /* EventsViewController.swift in Sources */,
 				33EEFD101D9DA83900462884 /* EventNetworking.xcdatamodeld in Sources */,
+				33188A761DA29392004D50EC /* AttendeeCell.swift in Sources */,
 				33EEFD171D9DAF4500462884 /* User+Class.swift in Sources */,
 				33EEFD201D9E8E6D00462884 /* CoreDataStack.swift in Sources */,
 				33EEFD221D9E967C00462884 /* EventNetworkingAPI.swift in Sources */,

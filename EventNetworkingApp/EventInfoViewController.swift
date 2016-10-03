@@ -26,6 +26,12 @@ class EventInfoViewController: UIViewController {
     override func viewDidLoad() {
         let config = URLSessionConfiguration.default
         self.session = URLSession(configuration: config)
+        if self.attendees == nil {
+            self.attendees = []
+        }
+        OperationQueue.main.addOperation {
+            self.listOfAttendees.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +40,10 @@ class EventInfoViewController: UIViewController {
         self.locationLabel.text = self.event?.location
         self.dataAndTimeLabel.text = self.event?.dateAndTime
         self.detailsTextView.text = self.event?.details
+        self.listOfAttendees.dataSource = self
+        OperationQueue.main.addOperation {
+            self.listOfAttendees.reloadData()
+        }
     }
     
     @IBAction func checkIntoEvent(_ sender: AnyObject) {
@@ -63,23 +73,47 @@ class EventInfoViewController: UIViewController {
                 }
                 
                 let jsonData = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: AnyObject]
-                let eventsJSONDataArray = jsonData["myEvents"] as! [String: AnyObject]?
-                let error = jsonData["errorMessage"] as! String?
+                let eventsJSONData = jsonData["myEvents"] as! [[String: AnyObject]]
+                let error = jsonData["errorMessage"] as? String?
+                print(eventsJSONData)
                 
-                if error != nil {
-                    let userJSON = eventsJSONDataArray?["user"] as! [String : AnyObject]?
-                    let user = User(data: userJSON!)
-                    print("\n\n\n\n\n\(user)")
+                if error == nil {
+                    for eventAndUserData in eventsJSONData {
+                        let userJSON = eventAndUserData["user"] as! [String: AnyObject]?
+                        let myUser = User(data: userJSON!)
+                        self.attendees?.append(myUser!)
+                    }
+                    
+                    OperationQueue.main.addOperation {
+                        self.listOfAttendees.reloadData()
+                    }
                 }
-                
-                OperationQueue.main.addOperation {
-                    self.listOfAttendees.reloadData()
-                }
-                
             }
             task?.resume()
+            
         }
         print("\n\n\n\n\ncheck in\n\n\n\n\n")
+    }
+    
+}
+
+extension EventInfoViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (self.attendees?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AttendeeCell") as! AttendeeCell
+        let user = self.attendees?[indexPath.row]
+        
+        cell.displayNameLabel.text = user?.displayName
+        
+        return cell
     }
     
 }

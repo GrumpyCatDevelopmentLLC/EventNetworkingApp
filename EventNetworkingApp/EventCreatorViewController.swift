@@ -108,7 +108,8 @@ class EventCreatorViewController: UIViewController {
     
     func stringFromDatePicker(_ datePicker: UIDatePicker) -> String {
         let timeFormatter = DateFormatter()
-        timeFormatter.timeStyle = DateFormatter.Style.full
+        timeFormatter.timeStyle = DateFormatter.Style.medium
+        timeFormatter.dateStyle = DateFormatter.Style.medium
         let stringDate = timeFormatter.string(from: datePicker.date)
         return stringDate
     }
