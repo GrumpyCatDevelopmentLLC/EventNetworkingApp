@@ -18,7 +18,7 @@ internal enum EventNetworkingAPIMethods: String {
     case SaveEvent = "/saveEvent.json"
     case MyEvents = "/myEvents.json"
     case AllEvents = "/allEvents.json"
-    case CheckIntoEvent = "/checkIn.josn"
+    case CheckIntoEvent = "/checkIn.json"
 }
 
 internal enum EventResult: Error {

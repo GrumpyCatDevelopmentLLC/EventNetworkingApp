@@ -42,22 +42,16 @@ class EventInfoViewController: UIViewController {
             let url = URL(string: EventNetworkingAPI.baseURL + EventNetworkingAPIMethods.CheckIntoEvent.rawValue)
             var request = URLRequest(url: url!)
             request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             
             let checkInPayload: [String: Any] = [
-                "user": [
-                    "id":"\(self.user?.id)",
-                    "email":"\(self.user?.email)",
-                    "password":"\(self.user?.password)",
-                    "displayName":"\(self.user?.displayName)",
-                    "offensive":"\(self.user?.isOffensive)"
-                ],
                 "event": [
-                    "id":"\(self.event!.id)",
-                    "name":"\(self.event!.name)",
-                    "location":"\(self.event?.location)",
-                    "dateAndTime":"\(self.event?.dateAndTime)",
-                    "details":"\(self.event?.details)"
+                    "id":"\(self.event!.id!)",
+                    "name":"\(self.event!.name!)",
+                    "location":"\(self.event?.location!)",
+                    "dateAndTime":"\(self.event?.dateAndTime!)",
+                    "details":"\(self.event?.details!)"
                 ]
             ]
             
@@ -69,12 +63,11 @@ class EventInfoViewController: UIViewController {
                 }
                 
                 let jsonData = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: AnyObject]
-                let eventsJSONDataArray = jsonData["myEvents"] as! [[String: AnyObject]]
-                let error = jsonData["errorMessage"] as! [String: AnyObject]?
+                let eventsJSONDataArray = jsonData["myEvents"] as! [String: AnyObject]?
+                let error = jsonData["errorMessage"] as! String?
                 
-                for eventJSONData in eventsJSONDataArray {
-                    
-                    let userJSON = eventJSONData["user"] as! [String: AnyObject]?
+                if error != nil {
+                    let userJSON = eventsJSONDataArray?["user"] as! [String : AnyObject]?
                     let user = User(data: userJSON!)
                     print("\n\n\n\n\n\(user)")
                 }
@@ -82,11 +75,10 @@ class EventInfoViewController: UIViewController {
                 OperationQueue.main.addOperation {
                     self.listOfAttendees.reloadData()
                 }
+                
             }
-
             task?.resume()
         }
-        
         print("\n\n\n\n\ncheck in\n\n\n\n\n")
     }
     
