@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+class EventCell: UITableViewCell {
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var checkedInCountLabel: UILabel!
+    @IBOutlet var dateAndTime: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    
+    var event: Event?
+    
+}

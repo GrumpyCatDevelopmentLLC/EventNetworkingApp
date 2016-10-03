@@ -8,43 +8,77 @@
 
 import UIKit
 
-enum TableViewState {
-    case Events
-    case Contacts
-}
-
-class HomeViewController: UIViewController {
+class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var profileButton: UIBarButtonItem!
     @IBOutlet var addEventButton: UIBarButtonItem!
-    @IBOutlet var eventsButton: UIBarButtonItem!
-    @IBOutlet var contactsButton: UIBarButtonItem!
+    @IBOutlet var navItem: UINavigationItem!
     
-    var state: TableViewState = .Events
     var eventStore: EventStore = EventStore()
+    var session: URLSession?
     var user: User?
     var events = [Event]()
-    var contacts = [User]()
+    var selectedEvent: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
         self.tableView.dataSource = self
-        //      self.tableView.delegate = self
+        let config = URLSessionConfiguration.default
+        self.session = URLSession(configuration: config)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let userDisplayName = self.user!.displayName
+        if userDisplayName.isEqual("sampson") || userDisplayName.isEqual("Admin") {
+            self.navigationItem.rightBarButtonItem = self.addEventButton
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
         
+        let privateQueue = OperationQueue()
+        privateQueue.addOperation {
+            let url = URL(string: EventNetworkingAPI.baseURL + EventNetworkingAPIMethods.AllEvents.rawValue)
+            var request = URLRequest(url: url!)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let task = self.session?.dataTask(with: request) { data, response, error in
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200  {
+                    print("\n\n\n\n\nstatusCode should be 200, but is \(httpStatus.statusCode)")
+                }
+                let jsonData = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: AnyObject]
+                let eventArray = jsonData["responseEventContainer"] as? [[String:AnyObject]]? ?? nil
+                
+                self.eventStore.events = []
+                
+                for eventData in eventArray! {
+                    let event = Event(data: eventData)
+                    self.eventStore.events.insert(event!, at: 0)
+                }
+                
+                self.events = self.eventStore.events
+
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+            }
+            task?.resume()
+            
+        }
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        
+        // request list of events from api
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         print(user)
         print(events)
-        print(contacts)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,55 +86,46 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     
-    @IBAction func changeStateAndReloadData(_ sender: UIBarButtonItem) {
-        if self.state == .Events {
-            self.state = .Contacts
-        } else if self.state == .Contacts {
-            self.state = .Events
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = self.events[indexPath.row]
+        self.selectedEvent = event
         
-        self.tableView.reloadData()
+        if self.selectedEvent != nil {
+            let mainBundle = Bundle.main
+            let storyBoard = UIStoryboard(name: "Main", bundle: mainBundle)
+            let eventInfoView = storyBoard.instantiateViewController(withIdentifier: "EventInfoViewController") as! EventInfoViewController
+            eventInfoView.event = self.selectedEvent
+            eventInfoView.user = self.user
+            show(eventInfoView, sender: nil)
+        }
     }
-    
-}
-
-//extension EventsViewController: UITableViewDelegate {
-//
-//}
-
-extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.state == .Events {
-            return self.events.count
-        } else if self.state == .Contacts {
-            return self.contacts.count
-        }
-        
-        return 0
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell?
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
+        let event = self.events[indexPath.row]
+        cell.nameLabel.text = event.name
+        cell.locationLabel.text = event.location
+        cell.dateAndTime.text = event.dateAndTime
+        cell.event = event
         
-        if self.state == .Events {
-            cell = tableView.dequeueReusableCell(withIdentifier: "EventCell")
-            
-            
-            
-            
-        } else if self.state == .Contacts {
-            cell = tableView.dequeueReusableCell(withIdentifier: "UserCell")
-            
-            
-            
-        }
-        
-        return cell!
+        return cell
+    }
+    
+}
+
+extension EventsViewController: EventCreatorViewControllerDelegate {
+    
+    func eventCreatorViewController(_ controller: EventCreatorViewController, didCreateEvent allEvents: [Event]) {
+        self.events = allEvents
+        controller.dismiss(animated: true, completion: nil)
     }
     
 }

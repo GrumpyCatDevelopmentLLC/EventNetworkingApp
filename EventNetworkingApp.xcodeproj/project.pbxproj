@@ -7,18 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3312B6D01D9EDB35009D13ED /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6CF1D9EDB35009D13ED /* UserTests.swift */; };
+		3312B6D21D9EF089009D13ED /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3312B6D11D9EF089009D13ED /* user.plist */; };
+		3312B6D41D9EF62D009D13ED /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D31D9EF62D009D13ED /* RegisterViewController.swift */; };
+		3312B6D61D9FDEEE009D13ED /* EventCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D51D9FDEED009D13ED /* EventCreatorViewController.swift */; };
+		3312B6D81DA002F2009D13ED /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3312B6D71DA002F2009D13ED /* EventTests.swift */; };
+		33E9E3291DA1531800631CBE /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E9E3281DA1531700631CBE /* EventInfoViewController.swift */; };
 		33EEFCE11D9D9BAD00462884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCE01D9D9BAD00462884 /* AppDelegate.swift */; };
-		33EEFCE31D9D9BAD00462884 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCE21D9D9BAD00462884 /* ViewController.swift */; };
+		33EEFCE31D9D9BAD00462884 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCE21D9D9BAD00462884 /* LoginViewController.swift */; };
 		33EEFCE61D9D9BAD00462884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EEFCE41D9D9BAD00462884 /* Main.storyboard */; };
 		33EEFCE81D9D9BAD00462884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EEFCE71D9D9BAD00462884 /* Assets.xcassets */; };
 		33EEFCEB1D9D9BAD00462884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EEFCE91D9D9BAD00462884 /* LaunchScreen.storyboard */; };
 		33EEFCF61D9D9BAD00462884 /* EventNetworkingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFCF51D9D9BAD00462884 /* EventNetworkingAppTests.swift */; };
 		33EEFD011D9D9BAD00462884 /* EventNetworkingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD001D9D9BAD00462884 /* EventNetworkingAppUITests.swift */; };
 		33EEFD101D9DA83900462884 /* EventNetworking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD0E1D9DA83900462884 /* EventNetworking.xcdatamodeld */; };
-		33EEFD151D9DAF4400462884 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD111D9DAF4400462884 /* Event+CoreDataClass.swift */; };
-		33EEFD161D9DAF4500462884 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD121D9DAF4400462884 /* Event+CoreDataProperties.swift */; };
-		33EEFD171D9DAF4500462884 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD131D9DAF4400462884 /* User+CoreDataClass.swift */; };
-		33EEFD181D9DAF4500462884 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD141D9DAF4400462884 /* User+CoreDataProperties.swift */; };
+		33EEFD151D9DAF4400462884 /* Event+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD111D9DAF4400462884 /* Event+Class.swift */; };
+		33EEFD171D9DAF4500462884 /* User+Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD131D9DAF4400462884 /* User+Class.swift */; };
+		33EEFD1A1D9DBEE800462884 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD191D9DBEE800462884 /* EventsViewController.swift */; };
+		33EEFD1C1D9DD53B00462884 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD1B1D9DD53B00462884 /* EventCell.swift */; };
+		33EEFD1E1D9E8D5500462884 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD1D1D9E8D5500462884 /* EventStore.swift */; };
+		33EEFD201D9E8E6D00462884 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD1F1D9E8E6D00462884 /* CoreDataStack.swift */; };
+		33EEFD221D9E967C00462884 /* EventNetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD211D9E967C00462884 /* EventNetworkingAPI.swift */; };
+		33EEFD311D9E996D00462884 /* Event+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD2F1D9E996D00462884 /* Event+Properties.swift */; };
+		33EEFD321D9E996D00462884 /* User+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEFD301D9E996D00462884 /* User+Properties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3312B6CF1D9EDB35009D13ED /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		3312B6D11D9EF089009D13ED /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		3312B6D31D9EF62D009D13ED /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3312B6D51D9FDEED009D13ED /* EventCreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCreatorViewController.swift; sourceTree = "<group>"; };
+		3312B6D71DA002F2009D13ED /* EventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		33E9E3281DA1531700631CBE /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		33EEFCDD1D9D9BAD00462884 /* EventNetworkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventNetworkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EEFCE01D9D9BAD00462884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33EEFCE21D9D9BAD00462884 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33EEFCE21D9D9BAD00462884 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		33EEFCE51D9D9BAD00462884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33EEFCE71D9D9BAD00462884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33EEFCEA1D9D9BAD00462884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,10 +70,15 @@
 		33EEFD001D9D9BAD00462884 /* EventNetworkingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNetworkingAppUITests.swift; sourceTree = "<group>"; };
 		33EEFD021D9D9BAD00462884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33EEFD0F1D9DA83900462884 /* EventNetworking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventNetworking.xcdatamodel; sourceTree = "<group>"; };
-		33EEFD111D9DAF4400462884 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		33EEFD121D9DAF4400462884 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		33EEFD131D9DAF4400462884 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		33EEFD141D9DAF4400462884 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33EEFD111D9DAF4400462884 /* Event+Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Class.swift"; sourceTree = "<group>"; };
+		33EEFD131D9DAF4400462884 /* User+Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Class.swift"; sourceTree = "<group>"; };
+		33EEFD191D9DBEE800462884 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		33EEFD1B1D9DD53B00462884 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		33EEFD1D1D9E8D5500462884 /* EventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		33EEFD1F1D9E8E6D00462884 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		33EEFD211D9E967C00462884 /* EventNetworkingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNetworkingAPI.swift; sourceTree = "<group>"; };
+		33EEFD2F1D9E996D00462884 /* Event+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Properties.swift"; sourceTree = "<group>"; };
+		33EEFD301D9E996D00462884 /* User+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Properties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,17 +129,26 @@
 		33EEFCDF1D9D9BAD00462884 /* EventNetworkingApp */ = {
 			isa = PBXGroup;
 			children = (
-				33EEFD111D9DAF4400462884 /* Event+CoreDataClass.swift */,
-				33EEFD121D9DAF4400462884 /* Event+CoreDataProperties.swift */,
-				33EEFD131D9DAF4400462884 /* User+CoreDataClass.swift */,
-				33EEFD141D9DAF4400462884 /* User+CoreDataProperties.swift */,
+				33EEFD2F1D9E996D00462884 /* Event+Properties.swift */,
+				33EEFD301D9E996D00462884 /* User+Properties.swift */,
+				33EEFD111D9DAF4400462884 /* Event+Class.swift */,
+				33EEFD131D9DAF4400462884 /* User+Class.swift */,
 				33EEFCE01D9D9BAD00462884 /* AppDelegate.swift */,
-				33EEFCE21D9D9BAD00462884 /* ViewController.swift */,
 				33EEFCE41D9D9BAD00462884 /* Main.storyboard */,
+				33EEFCE21D9D9BAD00462884 /* LoginViewController.swift */,
+				3312B6D31D9EF62D009D13ED /* RegisterViewController.swift */,
+				33EEFD191D9DBEE800462884 /* EventsViewController.swift */,
+				3312B6D51D9FDEED009D13ED /* EventCreatorViewController.swift */,
+				33E9E3281DA1531700631CBE /* EventInfoViewController.swift */,
 				33EEFCE71D9D9BAD00462884 /* Assets.xcassets */,
 				33EEFCE91D9D9BAD00462884 /* LaunchScreen.storyboard */,
 				33EEFCEC1D9D9BAD00462884 /* Info.plist */,
 				33EEFD0E1D9DA83900462884 /* EventNetworking.xcdatamodeld */,
+				33EEFD1B1D9DD53B00462884 /* EventCell.swift */,
+				33EEFD1D1D9E8D5500462884 /* EventStore.swift */,
+				33EEFD1F1D9E8E6D00462884 /* CoreDataStack.swift */,
+				33EEFD211D9E967C00462884 /* EventNetworkingAPI.swift */,
+				3312B6D11D9EF089009D13ED /* user.plist */,
 			);
 			path = EventNetworkingApp;
 			sourceTree = "<group>";
@@ -127,6 +158,8 @@
 			children = (
 				33EEFCF51D9D9BAD00462884 /* EventNetworkingAppTests.swift */,
 				33EEFCF71D9D9BAD00462884 /* Info.plist */,
+				3312B6CF1D9EDB35009D13ED /* UserTests.swift */,
+				3312B6D71DA002F2009D13ED /* EventTests.swift */,
 			);
 			path = EventNetworkingAppTests;
 			sourceTree = "<group>";
@@ -250,6 +283,7 @@
 				33EEFCEB1D9D9BAD00462884 /* LaunchScreen.storyboard in Resources */,
 				33EEFCE81D9D9BAD00462884 /* Assets.xcassets in Resources */,
 				33EEFCE61D9D9BAD00462884 /* Main.storyboard in Resources */,
+				3312B6D21D9EF089009D13ED /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +308,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33EEFD161D9DAF4500462884 /* Event+CoreDataProperties.swift in Sources */,
+				33E9E3291DA1531800631CBE /* EventInfoViewController.swift in Sources */,
+				33EEFD311D9E996D00462884 /* Event+Properties.swift in Sources */,
+				33EEFD1E1D9E8D5500462884 /* EventStore.swift in Sources */,
+				33EEFD321D9E996D00462884 /* User+Properties.swift in Sources */,
+				33EEFD1C1D9DD53B00462884 /* EventCell.swift in Sources */,
+				33EEFD1A1D9DBEE800462884 /* EventsViewController.swift in Sources */,
 				33EEFD101D9DA83900462884 /* EventNetworking.xcdatamodeld in Sources */,
-				33EEFD171D9DAF4500462884 /* User+CoreDataClass.swift in Sources */,
-				33EEFD181D9DAF4500462884 /* User+CoreDataProperties.swift in Sources */,
-				33EEFCE31D9D9BAD00462884 /* ViewController.swift in Sources */,
-				33EEFD151D9DAF4400462884 /* Event+CoreDataClass.swift in Sources */,
+				33EEFD171D9DAF4500462884 /* User+Class.swift in Sources */,
+				33EEFD201D9E8E6D00462884 /* CoreDataStack.swift in Sources */,
+				33EEFD221D9E967C00462884 /* EventNetworkingAPI.swift in Sources */,
+				33EEFCE31D9D9BAD00462884 /* LoginViewController.swift in Sources */,
+				3312B6D61D9FDEEE009D13ED /* EventCreatorViewController.swift in Sources */,
+				3312B6D41D9EF62D009D13ED /* RegisterViewController.swift in Sources */,
+				33EEFD151D9DAF4400462884 /* Event+Class.swift in Sources */,
 				33EEFCE11D9D9BAD00462884 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +330,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3312B6D01D9EDB35009D13ED /* UserTests.swift in Sources */,
+				3312B6D81DA002F2009D13ED /* EventTests.swift in Sources */,
 				33EEFCF61D9D9BAD00462884 /* EventNetworkingAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +567,7 @@
 				33EEFD071D9D9BAD00462884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33EEFD081D9D9BAD00462884 /* Build configuration list for PBXNativeTarget "EventNetworkingAppTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +576,7 @@
 				33EEFD0A1D9D9BAD00462884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33EEFD0B1D9D9BAD00462884 /* Build configuration list for PBXNativeTarget "EventNetworkingAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +585,7 @@
 				33EEFD0D1D9D9BAD00462884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

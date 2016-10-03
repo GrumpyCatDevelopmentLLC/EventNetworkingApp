@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   user.plist
-   EventNetworkingApp
-
-   Created by Rodney Sampson on 9/30/16.
-   Copyright (c) 2016 GrumpyCatDevelopmentLLC. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>id</key>
+	<integer>0</integer>
+	<key>email</key>
+	<string></string>
+	<key>password</key>
+	<string></string>
+	<key>displayName</key>
+	<string></string>
+	<key>isOffensive</key>
+	<false/>
+</dict>
 </plist>
