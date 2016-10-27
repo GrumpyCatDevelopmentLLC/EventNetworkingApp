@@ -32,7 +32,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let userDisplayName = self.user!.displayName
-        if userDisplayName.isEqual("sampson") || userDisplayName.isEqual("Admin") {
+        if userDisplayName.isEqual("sampson") || userDisplayName.isEqual("Admin") || userDisplayName.isEqual("TIY") {
             self.navigationItem.rightBarButtonItem = self.addEventButton
         } else {
             self.navigationItem.rightBarButtonItem = nil

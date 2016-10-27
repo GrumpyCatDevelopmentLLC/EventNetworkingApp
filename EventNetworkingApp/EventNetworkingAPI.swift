@@ -19,6 +19,7 @@ internal enum EventNetworkingAPIMethods: String {
     case MyEvents = "/myEvents.json"
     case AllEvents = "/allEvents.json"
     case CheckIntoEvent = "/checkIn.json"
+    case GetAttendees = "/attendees.json"
 }
 
 internal enum EventResult: Error {
